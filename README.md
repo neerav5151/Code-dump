@@ -1,6 +1,6 @@
 Dump all codes and algorithm for later use . 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -13,6 +13,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/Riasgremory5"><img src="https://avatars3.githubusercontent.com/u/72184276?v=4" width="100px;" alt=""/><br /><sub><b>Riasgremory5</b></sub></a><br /><a href="https://github.com/Mohitkumar6122/Code-dump/commits?author=Riasgremory5" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/yashgagneja"><img src="https://avatars3.githubusercontent.com/u/56828872?v=4" width="100px;" alt=""/><br /><sub><b>yashgagneja</b></sub></a><br /><a href="#content-yashgagneja" title="Content">🖋</a></td>
   </tr>
 </table>
 
