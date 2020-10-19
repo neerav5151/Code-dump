@@ -39,6 +39,7 @@ const int MX = 2000000001 ; // check the limits, dummy
 
 bool vis[maxn] = {0} ;
 
+// USING MIN HEAP aka PRIORITY QUEUE  
 void djikstra( vector < pl > v[], ll s, ll n) {
   vl dist(n, INF), par(n, -1) ;
   priority_queue < pl , vp, greater < pl >> pq ; // min heap 
@@ -65,6 +66,34 @@ void djikstra( vector < pl > v[], ll s, ll n) {
   for (auto x : dist) cout << x << " " ; // prints Shortests Distance Graph path from source node 
   cout << "\n" ;
   for (auto x : par)  cout << x << " "  ;
+
+}
+
+// USING SET 
+void djikstra( vector < pl > v[], ll s, ll n) {
+  vl dist(n, INF) ;
+
+  set < pl > st ;
+  st.insert({0, s}) ;
+
+  while (sz(st)) {
+    pl topp = *(st.begin()) ;
+    st.erase(st.begin()) ;
+    if (vis[topp.s]) continue ;
+    vis[topp.s] = 1 ;
+    dist[topp.s]  = topp.f ;
+    for (auto x : v[topp.s]) {
+      if (!vis[x.s]) {
+        if (dist[x.s] > dist[topp.s] + x.f) {
+          dist[x.s] = dist[topp.s] + x.f ;
+        }
+        st.insert({dist[x.s], x.s}) ;
+      }
+    }
+  }
+  for (auto x : dist) cout << x << " " ; // prints Shortests Distance Graph path from source node
+  cout << "\n" ;
+  // for (auto x : par)  cout << x << " "  ;
 
 }
 
