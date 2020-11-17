@@ -140,7 +140,7 @@ def print_board(board : Table) -> None:
 
 print('Before Solving Sudoku : \n')
 print_board(board)
-if solve2(board):
+if solve(board):
     print("\n********After Solving *********\n")
     print_board(board)
 else:
