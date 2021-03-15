@@ -36,39 +36,46 @@ const int mod = 1e9 + 7 ;
 const ll INF = 1e18 ;
 const int MX = 2000000001 ; // check the limits, dummy
 
-vector < pl > v[maxn] ; 
-bool mstset [maxn] ; // marking vertices included in mst 
+vp v[maxn];
+bool isInMst[maxn];
 
-ll prim( ll n) {
-
-  ll mst_sum = 0;
-  priority_queue<pl, vector<pl>, greater<pl>>pq;
-  pq.push({0, n});
+void prim(ll n)
+{
+  memset(isInMst, false, sizeof(isInMst));
+  priority_queue<pl, vp, greater<pl>> pq;
+  // FIRST ELEMENT IS ANY RANDOM VERTEX AND SECOND IS ZERO WEIGHT
+  pq.push({0, 0});
+  ll ans = 0;
   while (!pq.empty())
   {
-    pl topp = pq.top();
+    pl current = pq.top();
     pq.pop();
-    if (mstset[topp.s])continue;
-    mstset[topp.s] = 1;
-    mst_sum += topp.f;
-    for (int i = 0; i < v[topp.s].size(); i++)
+    //already present in MST
+    if (isInMst[current.f])
+      continue;
+    isInMst[current.f] = true;
+    ans += current.s;
+    for (auto x : v[current.f])
     {
-      pl son = v[topp.s][i];
-      if (mstset[son.s] == 0)
-        pq.push(son);
+      pl child = x;
+      if (isInMst[x.f])
+        continue;
+      pq.push({child});
     }
   }
-  return mst_sum;
+  cout << ans;
 }
-int main() {
-  ios_base::sync_with_stdio(0) , cin.tie(0);
-  ll t, q, n, a, b, c, d, k, l, m, r,  x = 0, y = 0, z = 0 , sum = 0, ans = 0, temp = 0, res = 0 ;
-  cin >> n >> x ;
-  ff(i, 0, x) {
-    cin >> a >> b >> c ;
-    v[a].pb({c, b}) ;
-    v[b].pb({c, a}) ;
+int main()
+{
+  ios_base::sync_with_stdio(0), cin.tie(0);
+  ll t, q, n, a, b, c, d, k, l, m, r, x = 0, y = 0, z = 0, sum = 0, ans = 0, temp = 0, res = 0;
+  n = 15;
+  ll src, dest, weight;
+  ff(i, 0, n)
+  {
+    cin >> src >> dest >> weight;
+    v[src].pb({dest, weight});
+    v[dest].pb({src, weight});
   }
-  ans = prim(1) ;
-  cout << ans ;
+  prim(n);
 }
