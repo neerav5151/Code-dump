@@ -43,7 +43,9 @@ bool vis[maxn] = {0} ;
 void djikstra( vector < pl > v[], ll s, ll n) {
   vl dist(n, INF), par(n, -1) ;
   priority_queue < pl , vp, greater < pl >> pq ; // min heap 
-
+  
+  //Always push distance as first cause it will sort according to distance else you have to make a custim comparator operator .
+  
   pq.push({0, s}) ; // push source node with 0 distance
   while (sz(pq)) {
     pl topp = pq.top() ; // min dist node
@@ -66,6 +68,9 @@ void djikstra( vector < pl > v[], ll s, ll n) {
   for (auto x : dist) cout << x << " " ; // prints Shortests Distance Graph path from source node 
   cout << "\n" ;
   for (auto x : par)  cout << x << " "  ;
+  // FOR TRACKING PATH 
+  //  for (int i = dest -1; i != source and i != -1; i = par[i])
+  //    cout << i << " <--- ";
 
 }
 
