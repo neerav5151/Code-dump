@@ -114,6 +114,7 @@ int main() {
   djikstra(v, 0, 9) ;
 }
 /* INPUT 
+THIS INPUT && OUTPUT IS FOR UNDIRECTED GRAPH
 0 1 4
 0 7 8 
 1 2 8
