@@ -3,8 +3,6 @@
  * @brief [N queens](https://en.wikipedia.org/wiki/Eight_queens_puzzle) all
  * optimized
  *
- * @author [Sombit Bose](https://github.com/deadshotsb)
- * @author [David Leal](https://github.com/Panquesito7)
  */
 
 #include <array>
