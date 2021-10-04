@@ -1,6 +1,7 @@
 /**
  * \file
- * \brief The [Knuth-Morris-Pratt
+ * \brief 
+ * The [Knuth-Morris-Pratt
  * Algorithm](https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm) for
  * finding a pattern within a piece of text with complexity O(n + m)
  *
@@ -13,12 +14,12 @@
  */
 
 #include <iostream>
+#include <vector>
 #ifdef _MSC_VER
 #include <string>  // use this for MS Visual C++
 #else
 #include <cstring>
 #endif
-#include <vector>
 
 /** \namespace string_search
  * \brief String search algorithms
@@ -71,6 +72,63 @@ bool kmp(const std::string &pattern, const std::string &text) {
 }  // namespace string_search
 
 using string_search::kmp;
+
+typedef long long ll;
+const int maxn = 1e5 + 5;
+#define sz(x) (ll)(x).size()
+
+ll lps[maxn]; // longest prefix array which is also a suffix
+
+void kmp(std::string s)
+{
+    ll i = 1, j = 0;
+    lps[0] = 0;
+    while (i < sz(s))
+    {
+        if (s[i] == s[j])
+        {
+            lps[i++] = ++j;
+        }
+        else
+            j = 0, i++;
+    }
+    //ff(i, 0, sz(s)) cout << lps[i] << " " ;
+}
+
+void match_sub(std::string s, std::string t)
+{
+    ll i = 0, j = 0;
+    std::vector<int> v;
+    while (i < s.size())
+    {
+        if (s[i] == t[j])
+        {
+            ++i, ++j;
+            if (j == sz(t))
+            {
+                //cout << "std::string Found at\t" << i - j + 1 << endl ;
+                v.push_back(i - j + 1);
+                j = lps[j - 1];
+            }
+        }
+        else
+        {
+            if (j)
+                j = lps[j - 1];
+            else
+                ++i;
+        }
+    }
+    if (!sz(v))
+        std::cout << "Not Found\n";
+    else
+    {
+        std::cout << sz(v) << "\n";
+        for (auto x : v)
+            std::cout << x << " ";
+        std::cout << "\n";
+    }
+}
 
 /** Main function */
 int main() {
