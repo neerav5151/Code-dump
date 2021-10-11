@@ -9,19 +9,19 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v2
 
-    - name: Check spelling of file.txt
+    - name: Check spelling of repository
       uses: crate-ci/typos@master
       with: 
         files: 
 
-    - name: Use custom config file
-      uses: crate-ci/typos@master
-      with: 
-        files: 
-        config: ./myconfig.toml
+    # - name: Use custom config file
+    #   uses: crate-ci/typos@master
+    #   with: 
+    #     files: 
+    #     config: ./myconfig.toml
 
-    - name: Ignore implicit configuration file
-      uses: crate-ci/typos@master
-      with: 
-        files: 
-        isolated: true
+    # - name: Ignore implicit configuration file
+    #   uses: crate-ci/typos@master
+    #   with: 
+    #     files: 
+    #     isolated: true
