@@ -217,7 +217,7 @@ Node * makebst(vl v, int l, int r){
 
 void cnt(Node * root, ll & ans){
   /*
-    @param : root node and ans-> count of current nodes (passed by  refernece)
+    @param : root node and ans-> count of current nodes (passed by reference)
     @return : void (as count is passsed by reference).
   */
   if(!root)

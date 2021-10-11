@@ -28,7 +28,7 @@ namespace range_queries {
  */
  namespace sparse_table {
 /**
- * This function precomputes intial log table for further use.
+ * This function precomputes initial log table for further use.
  * @param n value of the size of the input array
  * @return corresponding vector of the log table
  */
