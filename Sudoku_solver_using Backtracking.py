@@ -18,7 +18,7 @@
 from typing import List, Tuple 
 Table = List[List[int]] # typing hint for board
 
-# intial values of sudoku board
+# initial values of sudoku board
 # 0 represents place to be filled
 
 board = [
@@ -85,9 +85,9 @@ def solve(board : Table) -> bool:
         This is Solver function which uses Backtracking 
         it repeatedly fills values in empty spaces and if filled
         value is wrong it backtracks to last value and start filling again
-        with diffrent value
+        with different value
 
-        Parameteres : 
+        Parameters : 
         Input : Board : Table
 
         Output : True if it solves the Sudoku Table

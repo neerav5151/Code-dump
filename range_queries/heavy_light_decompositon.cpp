@@ -1,4 +1,4 @@
-**
+/**
  * @file
  * @brief [Heavy Light
  * Decomposition](https://en.wikipedia.org/wiki/Heavy_path_decomposition)
@@ -25,7 +25,7 @@
  * To start answering updates and queries,
  * 1. Create an instance of HLD<X> object (obj), with the required data type.
  * 2. Read in the edge/parent information and update it with obj.add_edge().
- * Note: The edges addes must be 0 indexed.
+ * Note: The edges added must be 0 indexed.
  * 3. Create a vector with initial node values, and call set_node_val() with it.
  * 4. Call obj.init() to populate the required information for supporting
  * operations.
@@ -260,7 +260,7 @@ private:
 
   std::vector<X> s_tree; ///< the segment tree, stored as a vector
   int s_size;            ///< number of leaves in the segment tree
-  X sret_init = 0;       ///< inital query return value
+  X sret_init = 0;       ///< initial query return value
   template <typename T> friend class HLD;
 
   /**
@@ -273,7 +273,7 @@ private:
   X combine(X lhs, X rhs) { return lhs + rhs; }
 
   /**
-   * @brief Class parameterized constructor. Resizes the and initilizes the data
+   * @brief Class parameterized constructor. Resizes the and initializes the data
    * members.
    * @param nodes the total number of nodes in the tree
    * @returns void
@@ -285,7 +285,7 @@ private:
 
   /**
    * @brief Update the value at a node
-   * @param p the node to be udpated
+   * @param p the node to be updated
    * @param v the update value
    * @returns void
    */
@@ -380,8 +380,8 @@ private:
   }
 
   /**
-   * @brief Utility function to lable the nodes so that heavy chains have a
-   * contigous lable
+   * @brief Utility function to label the nodes so that heavy chains have a
+   * contiguous table
    * @param u current dfs node
    * @param p the parent of node u
    * @returns void
@@ -427,7 +427,7 @@ private:
 
 public:
   /**
-   * @brief Class parameterized constructor. Resizes the and initilizes the data
+   * @brief Class parameterized constructor. Resizes the and initializes the data
    * members.
    * @param nodes the total number of nodes in the tree
    */
@@ -442,7 +442,7 @@ public:
 
   /**
    * @brief This function must be called after the tree adjacency list and node
-   * values are populated The function initializes the required parametes, and
+   * values are populated The function initializes the required parameters, and
    * populates the segment tree
    * @returns void
    */
