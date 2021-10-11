@@ -7,6 +7,7 @@
     pointer, together with next pointer and data which are there in singly linked list.
  - Advantages over SLL - It can be traversed in both forward and backward direction.
      Delete operation is more efficient
+     
 """
 
 
